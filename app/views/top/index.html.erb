@@ -20,16 +20,5 @@
 
   <%= render @feed_contents_resource %>
 
-  <%= @feed_contents_resource.each do |feed| %>
-    <% if feed.type_id == "answer" %>
-      <%= render partial: "answers/answer" locals: {answer: feed} %>
-    <% elsif == "question" %>
-      <%= render partial: "questions/question" locals: {question: feed} %>
-    <% end %>
-  <% end %>
-
-  <%= render partial: "tweets/tweet" locals: { tweet: tweet } %>
-  <%= render @tweets %>
-
   <%= paginate(@feed_contents) %>
 <% end %>
